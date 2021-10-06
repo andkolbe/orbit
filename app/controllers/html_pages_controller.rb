@@ -4,4 +4,10 @@ class HtmlPagesController < ApplicationController
 
   def help
   end
+
+  def about
+  end
+  
 end
+
+# HtmlPagesController inherits from the rails class ApplicationController
