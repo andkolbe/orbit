@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Orbit001</title>
+    <title><%= yield(:title) %> | Orbit Feedback Application</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <%= csrf_meta_tags %> <%# built in security against CSRF attacks %>
+    <%= csp_meta_tag %> <%# built in security against cross site scripting attacks %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
