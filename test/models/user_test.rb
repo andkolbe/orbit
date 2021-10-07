@@ -18,4 +18,14 @@ class UserTest < ActiveSupport::TestCase
     @user.email = ''
     assert_not @user.valid?
   end
+
+  test 'name cannot be too long' do
+    @user.name = 'a' * 61
+    assert_not @user.valid?
+  end
+
+  test 'email cannot be too long' do
+    @user.email = 'a' * 255 + '@example.com'
+    assert_not @user.valid?
+  end
 end
