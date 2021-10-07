@@ -8,7 +8,9 @@ class HtmlPagesController < ApplicationController
 
   def about
   end
-  
+
+  def contact
+  end
 end
 
 # HtmlPagesController inherits from the rails class ApplicationController
