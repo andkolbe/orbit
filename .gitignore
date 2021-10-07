@@ -39,7 +39,6 @@
 yarn-debug.log*
 .yarn-integrity
 
-
 ruby.txt
 
 example_user.rb

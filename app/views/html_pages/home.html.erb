@@ -1,4 +1,8 @@
 <%# provide is a rails function. We are associating the string Home with the label :title %>
+<% provide(:title, 'Home') %>
 
-<h1>Orbit Home Page</h1>
-<p>This is the template <b>Home page</b> for our Orbit Feedback App</p>
+<div class="center jumbotron">
+  <h1>Welcome to Orbit</h1>
+
+  <%= link_to "Create an account", signup_path, class: "btn btn-lg btn-primary" %>
+</div>

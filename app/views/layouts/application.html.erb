@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html><%# tells Rails and the browser that we are using HTML 5 %>
 <html>
   <head>
     <title><%= full_title(yield(:title)) %></title>
@@ -14,6 +14,9 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%#= render 'layouts/header' %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
