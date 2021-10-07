@@ -1,3 +1,4 @@
+# class HtmlPagesController inherits from ApplicationController
 class HtmlPagesController < ApplicationController
   def home
   end

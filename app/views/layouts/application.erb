@@ -6,7 +6,10 @@
     <%= csrf_meta_tags %> <%# built in security against CSRF attacks %>
     <%= csp_meta_tag %> <%# built in security against cross site scripting attacks %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%# stylesheet_link_tag is a function. In Ruby, parenthesis around a function call are optional %>
+    <%# stylesheet_link_tag has two arguments. a string 'application' with a path to the stylesheet, and a hash with two elements %>
+    <%# media: is the start of a hash. In Ruby, curly braces around a hash are optional %>
+    <%= stylesheet_link_tag('application', { media: 'all', 'data-turbolinks-track': 'reload' }) %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
