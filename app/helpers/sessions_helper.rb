@@ -14,6 +14,11 @@ module SessionsHelper
     def logged_in? # you are logged in if the current user is not nil
         !current_user.nil?
     end
+
+    def log_out
+        session.delete(:user_id)
+        @current_user = nil
+    end
 end
 
 # a ||= b is equivalent to a = a || b
