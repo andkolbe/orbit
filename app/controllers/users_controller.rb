@@ -20,6 +20,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
   private
     def user_params # only accept these strong parameters for saving a new user in the database
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
