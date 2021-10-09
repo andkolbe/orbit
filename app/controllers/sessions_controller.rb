@@ -7,7 +7,8 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       # Login the user
     else
-    render 'new'
+      flash.now[:danger] = "Invalid email/password combination"
+      render 'new'
     end
   end
 
