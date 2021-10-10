@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
     has_secure_password
 
-    validates :password, presence: true, length: { minimum: 6 }
+    validates :password, presence: true, length: { minimum: 6 }, allow_nil: true  # allow a nil password when updating username or email
 
     # works out the cost parameter that determines the computational cost to calculate the hash
     def User.digest(string)

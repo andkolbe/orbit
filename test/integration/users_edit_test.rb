@@ -11,4 +11,17 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     patch user_path(@user), params: { user: { name: "", email: "andrew@example", password: "pass", password_confirmation: "word"} }
     assert_template 'users/edit'
   end
+
+  test "successful edit" do
+    get edit_user_path(@user)
+    assert_template 'users/edit'
+    name = "James Smith"
+    email = "james@example.com"
+    patch user_path(@user), params: { user: { name: name, email: email, password: "", password_confirmation: ""} }
+    assert_not flash.empty?
+    assert_redirected_to @user
+    @user.reload # reloads the user's information from the database and confirm they were successfully updated
+    assert_equal name, @user.name
+    assert_equal email, @user.email
+  end
 end
