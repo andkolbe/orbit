@@ -33,7 +33,7 @@ gem 'rexml', '~> 3.2', '>= 3.2.4'
 
 gem 'bootstrap-sass', '3.4.1'
 
-gem 'faker',  '2.1.2'
+gem 'faker', '~> 2.19'
 
 gem 'will_paginate',  '3.1.8'
 gem 'bootstrap-will_paginate',  '1.0.0'
