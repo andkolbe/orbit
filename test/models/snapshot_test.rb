@@ -24,4 +24,8 @@ class SnapshotTest < ActiveSupport::TestCase
     @snapshot.content = "a" * 251
     assert_not @snapshot.valid?
   end
+
+  test "order should be most recent feedback/snapshot first" do
+    assert_equal snapshots(:most_recent), Snapshot.first
+  end
 end

@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_many :snapshots
+    has_many :snapshots, dependent: :destroy # any dependent snapshots are deleted if the user is deleted
 
     before_save { self.email = email.downcase } # before an email is saved in the db, convert all the characters to lowercase
 
