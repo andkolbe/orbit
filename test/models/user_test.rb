@@ -2,30 +2,30 @@ require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @user = User.new(name: "Test User", email: "test@test.com", password: "1234", password_confirmation: "1234")
+    @user = User.new(name: "Test User", email: "test@test.com", password: "password", password_confirmation: "password")
   end
 
-  test 'should be valid'  do
+  test "should be valid"  do
     assert @user.valid? # will return true or false whether the user is valid or not
   end
 
-  test 'name should be present' do
-    @user.name = '             '
+  test "name should be present" do
+    @user.name = "             "
     assert_not @user.valid?
   end
 
-  test 'email should be present' do
-    @user.email = ''
+  test "email should be present" do
+    @user.email = ""
     assert_not @user.valid?
   end
 
-  test 'name cannot be too long' do
-    @user.name = 'a' * 61
+  test "name cannot be too long" do
+    @user.name = "a" * 61
     assert_not @user.valid?
   end
 
-  test 'email cannot be too long' do
-    @user.email = 'a' * 255 + '@example.com'
+  test "email cannot be too long" do
+    @user.email = "a" * 255 + "@example.com"
     assert_not @user.valid?
   end
 
@@ -45,19 +45,19 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
-  test 'email address should be unique' do
+  test "email address should be unique" do
     duplicate_user = @user.dup # dup duplicates a user with the same attributes
     @user.save
     assert_not duplicate_user.valid?
   end
 
-  test 'password should be present (cannot be blank)' do
-    @user.password = @user.password_confirmation = ' '  * 6
+  test "password should be present (cannot be blank)" do
+    @user.password = @user.password_confirmation = " "  * 6
     assert_not @user.valid?
   end
 
   test "password should have a minimum length" do
-    @user.password = @user.password_confirmation = 'p' * 5
+    @user.password = @user.password_confirmation = "p" * 5
     assert_not @user.valid?
   end
 end
