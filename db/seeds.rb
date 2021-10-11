@@ -2,12 +2,12 @@
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 
 # Create main test user
-User.create(name: "Test User", email: "test@testuser.com", password: "password", password_confirmation: "password")
+User.create!(name: "Test User", email: "test@testuser.com", password: "password123", password_confirmation: "password123", admin: true)
 
 # Bulk generate test users
 99.times do |n|
-    name = Faker::Name.name
-    email = "example-#{n+1}@testuser.org"
-    password = "password"
-    User.create!(name: name, email: email, password: password, password_confirmation: password)
+  name = Faker::Name.name
+  email = "example-#{n+1}@testuser.com"
+  password = "password123"
+  User.create!(name: name, email: email, password: password, password_confirmation: password)
 end
