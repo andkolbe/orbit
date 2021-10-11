@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :update] # only logged in users can edit and update
+  before_action :logged_in_user, only: [:index, :edit, :update] # only logged in users can edit and update
   before_action :correct_user, only: [:edit, :update]
 
   def new
@@ -10,6 +10,10 @@ class UsersController < ApplicationController
     # create an instance variable that can be used as @user in the users/show view
     # the controller reaches out to the model to find the user by the id in the database and then pass that to the view
     @user = User.find(params[:id])
+  end
+
+  def index
+    @users = User.all
   end
 
   def create
