@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     # create an instance variable that can be used as @user in the users/show view
     # the controller reaches out to the model to find the user by the id in the database and then pass that to the view
     @user = User.find(params[:id])
+    @snapshots = @user.snapshots.paginate(page: params[:page])
   end
 
   def index
