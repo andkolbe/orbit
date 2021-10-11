@@ -4,6 +4,7 @@ andrew:
   name: Andrew Test
   email: andrew@test.com
   password_digest: <%= User.digest('password') %>
+  admin: true
 
 odin:
   name: Odin Test
