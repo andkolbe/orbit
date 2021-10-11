@@ -3,7 +3,7 @@ require "test_helper"
 class SnapshotTest < ActiveSupport::TestCase
   def setup
     @user = users(:andrew)
-    @snapshot = Snapshot.new(content: "test content", user_id: @user.id)
+    @snapshot = @user.snapshots.build(content: "test content")
   end
 
   test "should be valid" do

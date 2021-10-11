@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+    has_many :snapshots
+
     before_save { self.email = email.downcase } # before an email is saved in the db, convert all the characters to lowercase
 
     # the name and email fields can't be a blank string and can't be too long
