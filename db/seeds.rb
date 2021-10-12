@@ -14,7 +14,14 @@ User.create!(name: "Test User", email: "test@test.com", password: "password", pa
 end
 
 users = User.order(:created_at).take(5)
-20.times do
+40.times do
   content = Faker::Lorem.sentence(word_count: 5)
   users.each { |user| user.snapshots.create!(content: content) }
 end
+
+users = User.all
+user = users.first
+following = users[2..50]
+followers = users[3..40]
+following.each { |followed| user.follow(followed) }
+followers.each { |follower| follower.follow(user) }
