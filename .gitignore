@@ -42,3 +42,5 @@ yarn-debug.log*
 ruby.txt
 
 example_user.rb
+
+aws_keys.txt
