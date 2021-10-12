@@ -1,5 +1,6 @@
 class User < ApplicationRecord
     has_many :snapshots, dependent: :destroy # any dependent snapshots are deleted if the user is deleted
+    has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
 
     before_save { self.email = email.downcase } # before an email is saved in the db, convert all the characters to lowercase
 
