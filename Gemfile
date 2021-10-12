@@ -40,6 +40,9 @@ gem 'bootstrap-will_paginate',  '1.0.0'
 
 gem 'active_storage_validations', '0.8.2'
 
+gem 'image_processing', '1.9.3'
+gem 'mini_magick', '4.9.5'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
