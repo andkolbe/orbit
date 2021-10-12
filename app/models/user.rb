@@ -18,4 +18,7 @@ class User < ApplicationRecord
         BCrypt::Password.create(string, cost: cost)
     end
 
+    def feed
+        Snapshot.where("user_id = ?", id)
+    end
 end

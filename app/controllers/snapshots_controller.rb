@@ -1,5 +1,5 @@
 class SnapshotsController < ApplicationController
-    before_action :logged_in_user, only [:create, :destroy]
+    before_action :logged_in_user, only: [:create, :destroy]
 
     def create
         @snapshot = current_user.snapshots.build(snapshot_params)
@@ -7,6 +7,7 @@ class SnapshotsController < ApplicationController
             flash[:success] = "Snapshot Created"
             redirect_to root_url
         else
+            @feed_items = current_user.feed.paginate(page: params[:page])
             render 'html_pages/home'
         end
     end
