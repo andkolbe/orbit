@@ -4,6 +4,7 @@ class SnapshotsController < ApplicationController
 
     def create
         @snapshot = current_user.snapshots.build(snapshot_params)
+        @snapshot.image.attach(params[:snapshot][:image])
         if @snapshot.save
             flash[:success] = "Snapshot Created"
             redirect_to root_url
@@ -22,7 +23,7 @@ class SnapshotsController < ApplicationController
     private
 
     def snapshot_params
-        params.require(:snapshot).permit(:content)
+        params.require(:snapshot).permit(:content, :image)
     end
 
     def correct_user
