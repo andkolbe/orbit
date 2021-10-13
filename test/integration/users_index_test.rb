@@ -3,7 +3,7 @@ require 'test_helper'
 class UsersIndexTest < ActionDispatch::IntegrationTest
 
   def setup
-    @admin  = users(:andrew)
+    @admin = users(:andrew)
     @non_admin = users(:odin)
   end
 
